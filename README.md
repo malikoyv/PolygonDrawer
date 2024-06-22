@@ -12,8 +12,8 @@ To run this project, you'll need:
 
 Clone the repository:
    ```bash
-   git clone https://github.com/your-username/google-maps-polygons.git
-   cd google-maps-polygons
+   git clone https://github.com/malikoyv/PolygonDrawer.git
+   cd PolygonDrawer
    ```
 
 ## Configuration
@@ -25,7 +25,7 @@ Before running the script, replace `API_KEY` in `google_maps_polygons.py` with y
 Run the script `google_maps_polygons.py` to generate an HTML file that visualizes the polygons on a Google Map.
 
 ```bash
-python google_maps_polygons.py
+python google_maps_polygon.py
 ```
 
 This will generate an HTML file named `google_maps_polygons.html` in the current directory.
