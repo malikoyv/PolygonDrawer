@@ -1,0 +1,32 @@
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Google Maps Polygons</title>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHNBJFmuHpGmhaTC5Deo_LBYsjBD1hdEk&libraries=drawing"></script>
+        <script>
+          function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 12,
+              center: {lat: 54.4009, lng: 18.6446}
+            });
+
+            
+            var polygon = new google.maps.Polygon({
+              paths: [{lat: 54.380125, lng: 18.587927},{lat: 54.373425, lng: 18.604137},{lat: 54.375684, lng: 18.629654},{lat: 54.387119, lng: 18.629246},{lat: 54.38763, lng: 18.61015}],
+              strokeColor: '#FF0000',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: '#FF0000',
+              fillOpacity: 0.35
+            });
+            polygon.setMap(map);
+        
+          }
+        </script>
+      </head>
+      <body onload="initMap()">
+        <div id="map" style="height: 600px; width: 100%;"></div>
+      </body>
+    </html>
+    

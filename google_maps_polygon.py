@@ -1,16 +1,13 @@
-import requests
-import json
-
 # Google Maps API Key (replace with your own)
 API_KEY = 'AIzaSyDHNBJFmuHpGmhaTC5Deo_LBYsjBD1hdEk'
 
 # Coordinates for Gdańsk, Poland
 gdansk_coordinates = [
-    (54.3705, 18.6156),
-    (54.4141, 18.5753),
-    (54.4212, 18.6983),
-    (54.4057, 18.7203),
-    (54.3885, 18.6783)
+    (54.380125, 18.587927),
+    (54.373425, 18.604137),
+    (54.375684, 18.629654),
+    (54.387119, 18.629246),
+    (54.387630, 18.610150)
 ]
 
 
