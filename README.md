@@ -30,6 +30,8 @@ python google_maps_polygons.py
 
 This will generate an HTML file named `google_maps_polygons.html` in the current directory.
 
+## Demo video
+https://github.com/malikoyv/PolygonDrawer/assets/124885789/3cda20f3-f13c-476f-aa74-9f0d987f83d7
 ## Features
 
 - **create_polygon(coordinates)**: Generates a Google Maps Polygon object based on provided coordinates.
