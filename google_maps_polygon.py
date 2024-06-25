@@ -1,3 +1,5 @@
+import numpy as np
+
 # Google Maps API Key (replace with your own)
 API_KEY = 'AIzaSyDHNBJFmuHpGmhaTC5Deo_LBYsjBD1hdEk'
 
@@ -24,14 +26,31 @@ def create_polygon(coordinates):
     return polygon
 
 
-# Function to calculate area of polygon using shoelace formula
+# Function to calculate area of polygon using geodesic distances
 def calculate_polygon_area(coordinates):
-    area = 0.0
-    for i in range(len(coordinates)):
-        x1, y1 = coordinates[i]
-        x2, y2 = coordinates[(i + 1) % len(coordinates)]
-        area += (x1 * y2 - y1 * x2)
-    return abs(area) / 2.0
+    def geodesic_area(lats, lons):
+        # Convert latitude and longitude to radians
+        lats = np.radians(lats)
+        lons = np.radians(lons)
+
+        # Earth radius in kilometers
+        R = 6371.0
+
+        # Initialize area
+        area = 0.0
+
+        for i in range(len(lats)):
+            lat1, lon1 = lats[i], lons[i]
+            lat2, lon2 = lats[(i + 1) % len(lats)], lons[(i + 1) % len(lats)]
+            # Shoelace formula on a sphere
+            area += (lon2 - lon1) * (2 + np.sin(lat1) + np.sin(lat2))
+
+        # Final area in square kilometers
+        area = area * (R**2) / 2.0
+        return round(abs(area), 2)
+
+    lats, lons = zip(*coordinates)
+    return geodesic_area(lats, lons)
 
 
 # Function to generate HTML file with Google Maps visualization
@@ -88,7 +107,7 @@ def main():
 
     # Calculate area of Gdańsk polygon
     area = calculate_polygon_area(gdansk_coordinates)
-    print(f"Area of Gdańsk Polygon: {area} square units")
+    print(f"Area of Gdańsk Polygon: {area} square kilometers")
 
     # Generate HTML file with Google Maps visualization
     generate_html(polygons)
