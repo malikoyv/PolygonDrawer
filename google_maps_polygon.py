@@ -1,7 +1,7 @@
 import numpy as np
 
 # Google Maps API Key (replace with your own)
-API_KEY = 'AIzaSyDHNBJFmuHpGmhaTC5Deo_LBYsjBD1hdEk'
+API_KEY = 'YOUR_API_KEY'
 
 # Coordinates for Gdańsk, Poland
 gdansk_coordinates = [
