@@ -43,7 +43,7 @@ https://github.com/malikoyv/PolygonDrawer/assets/124885789/3cda20f3-f13c-476f-aa
 Here's an example of how the script generates the HTML file:
 
 1. Defines polygon coordinates for Gdańsk, Poland.
-2. Calculates the area of the polygon.
+2. Calculates the area of the polygon in square kilometres.
 3. Generates an HTML file (`google_maps_polygons.html`) with the polygon visualized on a Google Map.
 
 ## Contributing
